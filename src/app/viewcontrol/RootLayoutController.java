@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package app;
+package app.viewcontrol;
 
+import app.Pola_23515034;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
-import pola_23515034.Pola_23515034;
 
 /**
  * FXML Controller class

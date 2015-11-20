@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package pola_23515034;
+package app;
 
-import app.RootLayoutController;
+import app.viewcontrol.RootLayoutController;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -48,27 +48,28 @@ public class Pola_23515034 extends Application {
         alert.setContentText(contentText);
         alert.showAndWait();
     }
-    private RootLayoutController controller;
     private Scene scene;
     private AnchorPane ap;
 
     public void initRootLayout() throws IOException {
         FXMLLoader loader = new FXMLLoader();
+        System.out.println(Pola_23515034.class.getResource("../app/RootLayout.fxml"));
         loader.setLocation(Pola_23515034.class.getResource("../app/RootLayout.fxml"));
         rootLayout = loader.load();
-        controller = loader.getController();
+        RootLayoutController controller = loader.getController();
         controller.setMainApp(this);
         scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
+//        setCenter();
     }
-//    public void showPerencanaanRuangLingkupProyek() throws IOException {
-//      FXMLLoader loader = new FXMLLoader();
-//      loader.setLocation(Main.class.getResource("fxml/ProjectScopePlanning.fxml"));
-//      AnchorPane ap = (AnchorPane) loader.load();
-//      rootLayout.setCenter(ap);
-//      ProjectScopePlanningController controller = loader.getController();
-//      controller.setMainApp(this);
-//   }
 
+//    public void setCenter() throws IOException {
+//        FXMLLoader loader = new FXMLLoader();
+//        loader.setLocation(Pola_23515034.class.getResource("../app/FirstController.fxml"));
+//        ap = loader.load();
+//        rootLayout.setCenter(ap);
+//        FirstController controller = loader.getController();
+//        controller.setMainApp(this);
+//    }
 }
