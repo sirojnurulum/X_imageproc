@@ -5,7 +5,7 @@
  */
 package app.viewcontrol;
 
-import app.Pola_23515034;
+import app.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.Initializable;
@@ -17,9 +17,9 @@ import javafx.fxml.Initializable;
  */
 public class RootLayoutController implements Initializable {
 
-    private Pola_23515034 mainApp;
+    Main mainApp;
 
-    public void setMainApp(Pola_23515034 mainApp) {
+    public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
     }
 

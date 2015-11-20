@@ -5,7 +5,7 @@
  */
 package app.viewcontrol;
 
-import app.Pola_23515034;
+import app.Main;
 import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -23,9 +23,9 @@ import javafx.stage.FileChooser;
  */
 public class FirstController implements Initializable {
 
-    private Pola_23515034 mainApp;
+    private Main mainApp;
 
-    public void setMainApp(Pola_23515034 mainApp) {
+    public void setMainApp(Main mainApp) {
         this.mainApp = mainApp;
     }
     @FXML
