@@ -7,6 +7,7 @@ package app;
 
 import app.viewcontrol.FirstController;
 import app.viewcontrol.RootLayoutController;
+import java.awt.image.BufferedImage;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
@@ -23,12 +24,9 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    private Stage primaryStage;
-    private BorderPane rootLayout;
-
-    public Stage getPrimaryStage() {
-        return primaryStage;
-    }
+    protected Stage primaryStage;
+    protected BorderPane rootLayout;
+    protected BufferedImage imOri, imGray, imBw, imBolong, imTulang;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -49,15 +47,15 @@ public class Main extends Application {
         alert.setContentText(contentText);
         alert.showAndWait();
     }
-    private Scene scene;
-    private AnchorPane ap;
+    protected Scene scene;
+    protected AnchorPane ap;
 
+    // <editor-fold defaultstate="collapsed" desc="layout controller">
     public void initRootLayout() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("viewcontrol/RootLayout.fxml"));
         rootLayout = loader.load();
         RootLayoutController controller = loader.getController();
-        controller.setMainApp(this);
         scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -70,6 +68,6 @@ public class Main extends Application {
         ap = loader.load();
         rootLayout.setCenter(ap);
         FirstController controller = loader.getController();
-        controller.setMainApp(this);
     }
+    //</editor-fold>
 }

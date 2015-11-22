@@ -15,7 +15,7 @@ import javafx.fxml.Initializable;
  *
  * @author Siroj Nur Ulum
  */
-public class RootLayoutController extends Main implements Initializable {
+public class HistogramController extends Main implements Initializable {
 
     /**
      * Initializes the controller class.
