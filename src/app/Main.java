@@ -8,15 +8,19 @@ package app;
 import app.viewcontrol.FirstController;
 import app.viewcontrol.RootLayoutController;
 import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.IOException;
 import javafx.application.Application;
 import static javafx.application.Application.launch;
+import javafx.embed.swing.SwingFXUtils;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Alert;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -24,9 +28,10 @@ import javafx.stage.Stage;
  */
 public class Main extends Application {
 
-    protected Stage primaryStage;
-    protected BorderPane rootLayout;
-    protected BufferedImage imOri, imGray, imBw, imBolong, imTulang;
+    public Stage primaryStage;
+    public BorderPane rootLayout;
+    public Scene scene;
+    public BufferedImage imOri, imGray, imBw, imBolong, imTulang;
 
     @Override
     public void start(Stage primaryStage) throws Exception {
@@ -47,8 +52,6 @@ public class Main extends Application {
         alert.setContentText(contentText);
         alert.showAndWait();
     }
-    protected Scene scene;
-    protected AnchorPane ap;
 
     // <editor-fold defaultstate="collapsed" desc="layout controller">
     public void initRootLayout() throws IOException {
@@ -56,6 +59,7 @@ public class Main extends Application {
         loader.setLocation(Main.class.getResource("viewcontrol/RootLayout.fxml"));
         rootLayout = loader.load();
         RootLayoutController controller = loader.getController();
+        controller.setMain(this);
         scene = new Scene(rootLayout);
         primaryStage.setScene(scene);
         primaryStage.show();
@@ -65,9 +69,27 @@ public class Main extends Application {
     public void setCenter() throws IOException {
         FXMLLoader loader = new FXMLLoader();
         loader.setLocation(Main.class.getResource("viewcontrol/First.fxml"));
-        ap = loader.load();
-        rootLayout.setCenter(ap);
+        AnchorPane ap = loader.load();
         FirstController controller = loader.getController();
+        controller.setMain(this);
+        rootLayout.setCenter(ap);
+    }
+
+    public void setIvImage(ImageView iv, BufferedImage image) {
+        if (image.getWidth() > iv.getFitWidth() | image.getHeight() > iv.getFitHeight()) {
+            iv.setImage(SwingFXUtils.toFXImage(image, null));
+        } else {
+            iv.setImage(SwingFXUtils.toFXImage(image, null));
+            iv.setFitHeight(image.getHeight());
+            iv.setFitWidth(image.getWidth());
+        }
+    }
+
+    //</editor-fold>
+    // <editor-fold defaultstate="collapsed" desc="image generator">
+    public void setBufferedImage(File file) throws IOException {
+        imOri = ImageIO.read(file);
     }
     //</editor-fold>
+
 }

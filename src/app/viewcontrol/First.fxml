@@ -20,10 +20,10 @@
                 <RowConstraints maxHeight="141.0" minHeight="-Infinity" prefHeight="30.0" vgrow="SOMETIMES" />
             </rowConstraints>
             <children>
-                <ImageView fx:id="ivOri" fitHeight="230.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                <ImageView fx:id="ivGray" fitHeight="230.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
-                <ImageView fx:id="ivBw" fitHeight="230.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
-                <ImageView fx:id="ivBurem" fitHeight="230.0" fitWidth="330.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <ImageView fx:id="ivOri" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <ImageView fx:id="ivGray" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+                <ImageView fx:id="ivBw" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
+                <ImageView fx:id="ivBurem" fitHeight="200.0" fitWidth="300.0" pickOnBounds="true" preserveRatio="true" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" GridPane.valignment="CENTER" />
                 <Button fx:id="btnChooseFile" mnemonicParsing="false" onAction="#chooseFileAction" text="Choose File" GridPane.columnSpan="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER" />
             </children>
         </GridPane>

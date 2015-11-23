@@ -6,16 +6,21 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-
-<BorderPane fx:controller="app.viewcontrol.RootLayoutController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.viewcontrol.RootLayoutController">
    <top>
       <MenuBar BorderPane.alignment="CENTER">
         <menus>
           <Menu mnemonicParsing="false" text="File">
             <items>
-              <MenuItem mnemonicParsing="false" text="Close" />
+              <MenuItem mnemonicParsing="false" onAction="#mainPage" text="Main Page" />
             </items>
           </Menu>
+            <Menu mnemonicParsing="false" text="Histogram">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#histogram" text="Histogram" />
+                  <MenuItem mnemonicParsing="false" onAction="#eqHistogram" text="Eq Histogram" />
+              </items>
+            </Menu>
         </menus>
       </MenuBar>
    </top>
