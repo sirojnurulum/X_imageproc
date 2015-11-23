@@ -25,7 +25,7 @@
                   <Insets top="20.0" />
                </GridPane.margin>
             </ImageView>
-            <LineChart GridPane.columnIndex="1">
+            <LineChart fx:id="chart" GridPane.columnIndex="1">
               <xAxis>
                 <CategoryAxis side="BOTTOM" />
               </xAxis>

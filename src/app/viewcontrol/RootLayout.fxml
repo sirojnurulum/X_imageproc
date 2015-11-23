@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.image.*?>
 <?import java.lang.*?>
 <?import java.util.*?>
 <?import javafx.scene.*?>
@@ -7,21 +8,37 @@
 <?import javafx.scene.layout.*?>
 
 <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="500.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="app.viewcontrol.RootLayoutController">
-   <top>
-      <MenuBar BorderPane.alignment="CENTER">
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#mainPage" text="Main Page" />
-            </items>
-          </Menu>
-            <Menu mnemonicParsing="false" text="Histogram">
+    <top>
+        <MenuBar BorderPane.alignment="CENTER">
+            <menus>
+                <Menu mnemonicParsing="false" text="File">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#mainPage" text="Main Page" />
+                    </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Histogram">
+                    <items>
+                        <MenuItem mnemonicParsing="false" onAction="#histogram" text="Histogram" />
+                        <MenuItem mnemonicParsing="false" onAction="#eqHistogram" text="Eq Histogram" />
+                    </items>
+                </Menu>
+            <Menu mnemonicParsing="false" text="Text">
               <items>
-                <MenuItem mnemonicParsing="false" onAction="#histogram" text="Histogram" />
-                  <MenuItem mnemonicParsing="false" onAction="#eqHistogram" text="Eq Histogram" />
+                <MenuItem mnemonicParsing="false" text="Chain Code" />
+                  <MenuItem mnemonicParsing="false" text="Kode Belok" />
+                  <MenuItem mnemonicParsing="false" text="Tulang" />
               </items>
             </Menu>
-        </menus>
-      </MenuBar>
-   </top>
+            <Menu mnemonicParsing="false" text="Konvolusi">
+              <items>
+                <MenuItem mnemonicParsing="false" text="Blur" />
+                  <MenuItem mnemonicParsing="false" text="Gaussian Blur" />
+                  <MenuItem mnemonicParsing="false" text="Homogen 8" />
+                  <MenuItem mnemonicParsing="false" text="Sobel" />
+                  <MenuItem mnemonicParsing="false" text="Emboss" />
+              </items>
+            </Menu>
+            </menus>
+        </MenuBar>
+    </top>
 </BorderPane>

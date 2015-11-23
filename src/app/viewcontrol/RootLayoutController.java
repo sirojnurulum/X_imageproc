@@ -10,9 +10,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
-import javafx.scene.layout.AnchorPane;
 
 /**
  * FXML Controller class
@@ -35,35 +33,63 @@ public class RootLayoutController implements Initializable {
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
 
     }
 
     // <editor-fold defaultstate="collapsed" desc="menu">
     @FXML
     public void mainPage() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(RootLayoutController.class.getResource("First.fxml"));
-        AnchorPane ap = loader.load();
-        main.rootLayout.setCenter(ap);
-        FirstController controller = loader.getController();
-        controller.setMain(main);
+        main.setCenter();
     }
 
     @FXML
     public void histogram() throws IOException {
-        FXMLLoader loader = new FXMLLoader();
-        loader.setLocation(RootLayoutController.class.getResource("Histogram.fxml"));
-        AnchorPane ap = loader.load();
-        HistogramController controller = loader.getController();
-        controller.setMain(main);
-        main.rootLayout.setCenter(ap);
+        main.mHistogram();
     }
 
     @FXML
-    public void eqHistogram() {
-
+    public void eqHistogram() throws IOException {
+        main.mEqHistogram();
     }
 
+    @FXML
+    public void chainCode() throws IOException {
+        main.mChainCode();
+    }
+
+    @FXML
+    public void kodeBelok() throws IOException {
+        main.mKodeBelok();
+    }
+
+    @FXML
+    public void tulang() throws IOException {
+        main.mTulang();
+    }
+
+    @FXML
+    public void buremin() throws IOException {
+        main.mBuremin();
+    }
+
+    @FXML
+    public void gaussianBlur() throws IOException {
+        main.mGaussianBlur();
+    }
+
+    @FXML
+    public void homogen8() throws IOException {
+        main.mHomogen8();
+    }
+
+    @FXML
+    public void sobel() throws IOException {
+        main.mSobel();
+    }
+
+    @FXML
+    public void emboss() throws IOException {
+        main.mEmboss();
+    }
     //</editor-fold>
 }

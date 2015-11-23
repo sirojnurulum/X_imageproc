@@ -8,22 +8,15 @@ package app.viewcontrol;
 import app.Main;
 import java.net.URL;
 import java.util.ResourceBundle;
-import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.chart.LineChart;
-import javafx.scene.image.ImageView;
 
 /**
  * FXML Controller class
  *
  * @author Siroj Nur Ulum
  */
-public class HistogramController implements Initializable {
+public class ChainCodeController implements Initializable {
 
-    @FXML
-    ImageView ivHistogramOri;
-    @FXML
-    LineChart chart;
     Main main;
 
     public void setMain(Main main) {
@@ -32,9 +25,6 @@ public class HistogramController implements Initializable {
 
     /**
      * Initializes the controller class.
-     *
-     * @param url
-     * @param rb
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {

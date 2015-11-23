@@ -27,7 +27,6 @@ import javafx.stage.FileChooser;
  * @author Siroj Nur Ulum
  */
 public class FirstController implements Initializable {
-// <editor-fold defaultstate="collapsed" desc="class var">
 
     @FXML
     ImageView ivOri;
@@ -44,7 +43,6 @@ public class FirstController implements Initializable {
     public void setMain(Main main) {
         this.main = main;
     }
-//</editor-fold>
 
     /**
      * Initializes the controller class.
@@ -57,6 +55,7 @@ public class FirstController implements Initializable {
         // TODO
 
     }
+    File file;
 
     @FXML
     public void chooseFileAction() {
@@ -69,7 +68,7 @@ public class FirstController implements Initializable {
         ext.add("*.bmp");
         FileChooser chooser = new FileChooser();
         chooser.getExtensionFilters().addAll(new FileChooser.ExtensionFilter("JPG, PNG, BMP Files", ext));
-        File file = chooser.showOpenDialog(main.primaryStage);
+        file = chooser.showOpenDialog(main.primaryStage);
         if (file == null) {
             main.showAlert("INFO", "Warning !!!", "No File Selected", Alert.AlertType.INFORMATION);
         } else {
@@ -78,13 +77,14 @@ public class FirstController implements Initializable {
             } catch (IOException ex) {
                 Logger.getLogger(FirstController.class.getName()).log(Level.SEVERE, null, ex);
             }
-            new Thread(() -> {
-                main.setIvImage(ivOri, main.imOri);
-            }).start();
-            new Thread(() -> {
-//                main.setIvImage(ivGray, main.imGray);
-            }).start();
+            setImage();
         }
     }
 
+    private void setImage() {
+        main.setIvImage(ivOri, main.imOri);
+        main.setIvImage(ivGray, main.imGray);
+        main.setIvImage(ivBw, main.imBw);
+        main.setIvImage(ivBurem, main.imBurem);
+    }
 }
